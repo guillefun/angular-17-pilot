@@ -1,0 +1,22 @@
+
+<section>
+  <div class="games-data">
+    <h3>Los juegos de {{ username }}</h3>
+    <ul>
+      @for(game of games; track game.id) {
+          <li (click)="setFav(game.id)">
+            <div class="game-data">
+              <span>{{ game.name }}</span>
+              @if(game.fav) {
+                <mat-icon>favorite</mat-icon>
+              } @else {
+                <mat-icon>favorite_border</mat-icon>
+              }
+            </div>
+          </li>
+      }
+    </ul>
+  </div>
+</section>
+
+

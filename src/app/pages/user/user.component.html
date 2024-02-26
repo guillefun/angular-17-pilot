@@ -1,0 +1,22 @@
+<section>
+  @if (isLogged) {
+    <div class="user-data">
+      <p>Bienvenido, {{ username }}</p>
+      <img
+        src="https://github.com/guillefun.png"
+        alt="photo"
+      >
+    </div>
+    <button (click)="isLogged = false">
+      Logout
+    </button>
+  } @else {
+    <div class="user-data">
+      <p>Inicia sesión!</p>
+    </div>
+    <button (click)="isLogged = true">
+      Sign in
+    </button>
+  }
+</section>
+<app-games (addFavoriteEvent)="getFavGame($event)" [username]="username"/>
